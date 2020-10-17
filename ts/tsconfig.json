@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "lib": ["ES2015.Core","ES2015.Collection","ES5"],
+        "module": "system",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outFile": "dist/index.js",
+        "sourceMap": true,
+        
+    },
+    "include": ["src/**/*","bindings.d.ts", "index.ts"],
+    "exclude": ["node_modules"]
+    
+}
