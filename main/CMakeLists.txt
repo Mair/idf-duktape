@@ -24,5 +24,5 @@ idf_component_register(
 
 
 set_source_files_properties(ductape/duktape.c PROPERTIES COMPILE_FLAGS -Wno-maybe-uninitialized)
-spiffs_create_partition_image(storage ../embedded_js FLASH_IN_PROJECT)
+#spiffs_create_partition_image(storage ../embedded_js FLASH_IN_PROJECT)
 

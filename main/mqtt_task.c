@@ -42,6 +42,7 @@ static esp_err_t mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
         break;
     case MQTT_EVENT_DATA:
         ESP_LOGI(TAG, "MQTT_EVENT_DATA");
+        printf("event->data_len = %d event->current_data_offset=%d event->total_data_len=%d\n",  event->data_len, event->current_data_offset, event->total_data_len);
         printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
         printf("DATA=%.*s\r\n", event->data_len, event->data);
         message_command_payload.payload_size = event->data_len;
@@ -69,7 +70,8 @@ void mqtt_task(void *params)
     receivedCommand = xQueueCreate(10, sizeof(message_command_payload_t));
 
     esp_mqtt_client_config_t mqttConfig = {
-        .uri = "mqtt://test.mosquitto.org:1883"};
+        .uri = "mqtt://test.mosquitto.org:1883",
+        .buffer_size = (1024*4)};
 
     esp_mqtt_client_handle_t client = esp_mqtt_client_init(&mqttConfig);
     esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, client);

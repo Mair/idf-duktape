@@ -6,7 +6,8 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "outFile": "dist/index.js",
-        "sourceMap": true,
+        "sourceMap": false,
+        
         
     },
     "include": ["src/**/*","bindings.d.ts", "index.ts"],
