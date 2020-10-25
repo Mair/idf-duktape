@@ -19,6 +19,7 @@ You need to have the IDF installed. You can view the free section of my course t
 ![inject](/img/inject.png)
 
 4. set up a mqtt out node as follows
+
 ![inject](/img/mqtt_out_node.png)
 
 5. connect the 2 nodes
